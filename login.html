@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        .screen
+        {
+            width: 30%;
+            border: 1px solid black;
+            margin: auto;
+            margin-top: 100px;
+            /* background-color:skyblue; */
+            border-radius: 10px;
+        }
+        .screen>div
+        {
+           
+            margin-left: 20px;
+        }
+    
+       
+        .Email input
+        {
+            width: 80%;
+            height: 30px;
+            margin-bottom: 10px;
+        }
+        .Password input
+        {
+            width: 80%;
+            height: 30px;
+           
+        } 
+        .Submit
+        {
+            border: 1px solid black;
+            width: 80%;
+            text-align: center;
+            height: 30px;
+            border: none;
+            outline: none;
+            margin-bottom: 10px;
+        }
+        .Submit input
+        {
+            width: 100%;
+            height: 30px;
+            background-color:lightcoral;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="screen">
+        <div class="title">
+            <h2>Login Form</h2>
+        </div>
+        <form onsubmit="login(event)">
+        <div class="Email">
+            <label>Email</label><br>
+            <input id="useremail" type="email" placeholder="Enter The Email"><br>
+        </div>
+        <div class="Password">
+            <label>Password</label><br>
+            <input id="userpassword" type="password" placeholder="Enter the Password"><br>
+            <p>Forget Password?</p>  
+        </div>  
+        <div class="Submit">
+            <input type="submit" value="Login">
+        </div>
+        </form>
+    </div>
+    <script src="./login.js"></script>
+</body>
+</html>

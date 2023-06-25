@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>singlepage</title>
+    <style>
+    #main
+    {
+        width: 100%;
+        height: 1900px;
+        /* border:1px solid black; */
+    }
+     #navbar    
+      {
+        width: 100%;
+        height: 60px;
+        border: 1px solid white;
+        display: flex ;
+        position: fixed;
+        background-color: #fff;
+        top: 0;
+        
+  
+      }
+      #navbar>div:nth-child(1)
+      {
+        width: 10%;
+        height: 100%;
+        /* border: 1px solid black; */
+      }
+       #navbar>div:nth-child(1)>img
+       {
+        width: 53px;
+        height: 36px;
+        margin-left: 15px;
+        margin-top: 13px;
+        background-color: white;
+        margin-bottom: 30px                 ;
+       }
+       #navbar>div:nth-child(2)
+      {
+        width: 50%;
+        height: 100%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: space-around;
+        margin-top: 19px;
+
+      }
+      #navbar>div:nth-child(2)>p
+      {
+        font-size: 10px;
+       font-family: Assistant,apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+
+      }
+      #navbar>div:nth-child(3)
+      {
+        width: 30%;
+        height: 50%;
+        border: 1px solid gray;
+        margin-top: 12px;
+        
+      }
+      #navbar>div:nth-child(3)>input
+      {
+        width: 200px;
+        font-size: 14px;
+        border: 1px solid #f5f5f6;  
+        border: none;
+        outline: none;
+        margin-top: 5px;
+
+      }
+      #navbar>div:nth-child(3)>button
+      {
+        border:none;
+        padding: 4px 4px;
+        /* margin-left: 10px; */
+        border: none;
+        background-color: white;
+      }
+      #navbar>div:nth-child(4)
+       {
+        width: 20%;
+        height: 100%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: space-around;
+        
+      }
+      #navbar>div:nth-child(4)>div
+      {
+        width: 20%;
+        height :100%;
+        margin-top: 12px;
+      }
+      #navbar>div:nth-child(4)>div>p
+      {
+        font-size: 10px;
+        font-family: Assistant,apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+       
+      }
+</style>
+</head>
+<body>
+    <div id="main">
+        <div id=navbar>
+            <div>
+              <img src="images_1_-removebg-preview.png">
+            </div>
+            <div>
+              <p>MEN</p>
+              <p>WOMEN</p>
+              <p>KIDS</p>
+              <p>HOME&LIVING</p>
+              <p>BEAUTY</p>
+              <p>STUDIO</p>
+            </div>
+            <div>
+              <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+               <input type="search" placeholder="Search for Product">
+            </div>
+            <div>
+              <div id="Switch">
+                <i class="fa-regular fa-user"></i>
+                <p>Profile</p>
+              </div>
+              <div>
+                <i class="fa-regular fa-heart"></i>
+                <p>wishlist</p>
+              </div>
+              <div>
+                <i class="fa-solid fa-bag-shopping"></i>
+                <p>Bags</p>
+              </div>
+              <div id="logout">
+                <button>Logout</button>
+              </div>
+            </div>
+          </div>
+          <div id="singlepage"></div>
+    </div>
+    <script>
+        window.onload=function()
+        {
+            var currentuser=JSON.parse(localStorage.getItem("myntraCurrentUser"))
+            // console.log(currentuser.userName);
+
+            if(!!currentuser)
+            {
+                var logoutDiv = document.getElementById("logout");
+                var divfromhtml=document.getElementById("Switch");
+    
+                // var h1=document.createElement("h1");
+                // h1.innerText="kunal";
+                // divfromhtml.append(h1)
+                       
+                var button ='<button onclick="logout()"><i class="fa-solid fa-arrow-right-from-bracket fa-2xl "></i>Logout</button>'
+                var name = `<h1>${currentuser.userEmail}</h1>`;
+                    divfromhtml.innerHTML=name;
+                    logoutDiv.innerHTML=button;
+            }
+            else
+            {
+                alert("current user absent")
+            }
+
+            var product=JSON.parse(localStorage.getItem("myntraCurrent-Product"));
+            var divToAppendProduct=document.getElementById("singlepage")
+
+            var structure= `<div id="singlePro">
+                <img src=${product.proImage}>
+                    <h3>${product.proName}</h3>
+                    <p>${product.proPrice}</p>
+                    <button onclick ='addcart(${JSON.stringify(product)})'>Add to cart </button>
+                    </div>`
+                    console.log(structure,"here");
+                    divToAppendProduct.innerHTML=structure;
+                }
+        function addcart(product)
+        {
+            alert("working")
+          var currretUser=JSON.parse(localStorage.getItem("myntraCurrentUser"));
+            var userData=JSON.parse(localStorage.getItem("myntrausers"));
+            var flagForUser=false;
+            for(var i=0;i<userData.length;i++)
+            {
+                if(currretUser.userEmail===userData[i].userEmail)
+                {
+                    if(userData[i].cartproducts==undefined)
+                    {
+                        userData[i].cartproducts=[product];
+                    }else
+                    {
+                        userData[i].cartproducts.push(product);
+                    }
+                    alert("product added to cart")
+                }
+                window.location.href='./cart1.html';
+            }
+            localStorage.setItem("myntrausers",JSON.stringify(userData));
+        }  
+        function logout()
+            {
+                alert("Logout Success");
+                localStorage.removeItem("myntraCurrentUser");
+                window.location.reload()
+            }
+    </script>
+</body>
+</html>

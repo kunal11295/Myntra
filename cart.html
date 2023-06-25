@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/032f5a99f2.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        #main
+        {
+            width:100%;
+            height: 1000px;
+            border: 1px solid red;
+        }
+        #navbar
+        {
+            width: 100%;
+            height: 60px;
+            border:1px solid gray;
+            display: flex;
+            justify-content: space-around;
+        }
+        #navbar>div:nth-child(1)
+        {
+            width: 20%;
+            height: 100%;
+            /* border:1px solid black; */
+        }
+        #navbar>div:nth-child(1)>img{
+            width: 60px;
+            margin-left: 50px;
+            margin-top: 20px;
+        }
+        #navbar>div:nth-child(2)
+        {
+            width: 40%;
+            height: 100%;
+            /* border:1px solid black; */
+           
+        }
+        #navbar>div:nth-child(2)>ul
+        {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            font-size: 15px;
+
+            
+        }
+        #navbar>div:nth-child(3)
+        {
+            width: 20%;
+            height: 100%;
+            /* border:1px solid black; */
+            display: flex;
+            /* justify-content: space-around; */
+        }
+        #navbar>div:nth-child(3)>img
+        {
+            width: 30px;
+            height: 20px;
+            margin-top: 19px;
+            margin-left: 20px;
+        }
+        #navbar>div:nth-child(3)>p
+        {
+            margin-top:20px;
+            font-size: 12px;
+        }
+        #cart
+        {
+            width: 70%;
+            height: 500px;
+            /* border: 1px solid gray; */
+            margin: auto;
+            display: flex;
+        }
+        #cart>div:nth-child(1)
+        {
+            width: 60%;
+            height: 100%;
+            /* border: 1px solid gray; */
+        }
+        #cart>div:nth-child(2)
+        {
+            width: 40%;
+            height: 100%;
+            border: 1px solid gray;
+        }
+            #cart>div:nth-child(1)>div
+            {
+                margin-bottom: 12px;
+            }
+        #item>div:nth-child(1)
+        {
+            width: 100%;
+            height:40px;
+            
+            border:1px solid grey;
+            margin-top: 20px;
+            display: flex;
+            /* justify-content: space-evenly; */
+        
+        }
+        #item>div:nth-child(1)>h4
+        {
+            width: 60%;
+            font-size: 12px;
+            padding-top: 10px;
+            /* border: 1px solid blue; */
+            
+        
+        
+        }
+        #item>div:nth-child(1)>h6
+        {
+            width: 90px;
+            height: 23px;
+            margin-top: 10px;
+            margin-left: 50px;
+            font-size: 8px;
+            border-color: red;
+            color: red;
+            background-color: white;
+            border: 1px solid red;
+           
+            padding-left: 8px;
+            padding-top: 5px;
+        }
+        #item>div:nth-child(2)
+        {
+            width: 100%;
+            height: 90px;
+            border: 1px solid gray;
+        }
+        #item>div:nth-child(2)>h4
+        {
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+        #item>div:nth-child(2)>p
+        {
+            font-size: 12px;
+             margin-bottom: 10px;
+        }
+        #item>div:nth-child(2)>span
+        {
+            color: red;
+        }
+        #item>div:nth-child(3)
+        {
+            display: flex;
+            border: 1px solid gray;
+        }
+        #item>div:nth-child(3)>img
+        {
+            width: 40px;
+        }
+        #item>div:nth-child(3)>p{
+            margin-top: 10px;
+        }
+        #item>div:nth-child(4)
+        {
+            border: 1px solid gray;
+        }
+        #item>div:nth-child(4)
+        {
+            display: flex;
+            justify-content: space-around;
+        }
+        #item>div:nth-child(4)>span
+        {
+            font-size: 12px;
+        }
+        #item>div:nth-child(5)
+        {
+            width: 100%;
+            height: 130px;
+            border: 1px solid gray;
+            display: flex;
+        }
+        #item>div:nth-child(5)>div:nth-child(1)>img
+        {
+            width: 80px;
+            margin-left: 25px;
+            margin-top: 10px;
+        }
+        #item>div:nth-child(5)>div:nth-child(2)
+        {
+            margin-left: 14px;
+            
+        }
+        #item>div:nth-child(5)>div:nth-child(2)>h4
+        {
+            font-size: 15px;
+            font-family: apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+        }
+        #item>div:nth-child(5)>div:nth-child(2)>p
+        {
+            font-size: 13px;
+            font-family: apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+        }
+        #item>div:nth-child(5)>div:nth-child(2)>select
+        {
+            font-weight: bold;
+        }
+        #item>div:nth-child(6)
+        {
+            width: 100%;
+            height: 60px;
+            border:1px solid gray;
+            display: flex;
+
+        }
+        #item>div:nth-child(6)>div:nth-child(1)
+        {
+            margin-top: 20px;
+            margin-left: 20px;
+        
+        }
+        #item>div:nth-child(6)>div:nth-child(2)
+        {
+            margin-top: 20px;
+            margin-left: 10px;
+        }
+        #item>div:nth-child(6)>div:nth-child(3)
+        {
+            margin-top: 20px;
+             
+        }
+        #order>div
+        {
+            margin-bottom: 10px;
+        }
+        #order>div:nth-child(1)
+        {
+            width: 100%;
+            height: 100px;
+            border: 1px solid red;
+        
+        }
+        #image{
+            display: flex;
+            
+        }
+        #kb
+        {
+            display: flex;
+            justify-content: space-around;
+           
+        }
+        #kb>p
+        {
+            margin-left: 30px;
+        }
+        #kb>span
+        {
+            border: 1px solid red;
+            width: 50px;
+            height: 30px;
+           
+        }
+        
+        #order>div:nth-child(2)
+        {
+            width: 100%;
+            height: 120px;
+            border: 1px solid red;
+
+        }
+        #gift
+        {
+            margin-bottom: 10px;
+        }
+        #buy{
+            display: flex;
+            justify-content: space-between;
+            background-color: #fff1ec;
+        }
+        #buy>div:nth-child(1)>img{
+            width: 40px;
+        }
+        #order>div:nth-child(3)
+        {
+            width: 100%;
+            height: 150px;
+            border: 1px solid gray;
+             
+
+        }
+        #total
+        {
+            display: flex;
+            justify-content: space-between;
+            
+
+        }
+        #left>div   
+        {
+            margin-bottom: 12px;
+        }
+        #Right>div
+        {
+            margin-bottom: 12px;
+        }
+        #order>div:nth-child(4)
+        {
+            width: 100%;
+            height: 90px;
+            /* border: 1px solid red; */
+            
+        }
+        #order>div:nth-child(4)>div:nth-child(1)
+        {
+            display: flex;
+            /* border: 1px solid black; */
+            justify-content: space-between;
+            margin-bottom: 20px;
+            
+        }
+        #order>div:nth-child(4)>div:nth-child(2)>button
+        {
+            width: 100%;
+            height: 30px;
+            font-size: large;
+            color:white;
+            background-color: rgb(255, 63, 108);
+            border: none;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="navbar">
+            <div>
+                <img src="images_1_-removebg-preview.png">
+            </div>
+            <div>
+                <ul>
+                    <li>BAGS</li>
+                    <li>------</li>
+                    <li>ADDRESS</li>
+                    <li>------</li>
+                    <li>PAYMENT </li>
+                </ul>
+            </div>
+            <div>
+                <img src="https://constant.myntassets.com/checkout/assets/img/sprite-secure.png">
+                <p>100%</p>
+                <p>SECURE</p>
+            </div>
+        </div>
+        <div id="cart">
+            <div id="item">
+                <div>
+                    <h4>check delivery item & services</h4>
+                    <h6>ENTER PIN CODE</h6>
+                </div>
+                <div>
+                    <h4>Avaliable Offers</h4>
+                      <p>Get up to Rs 500 Cashbac k on CRED pay UPI(Android Devices Only) on a Minimum spend of RS 1000. TCA</p> 
+                    <span>Show More</span>    
+                </div>
+                <div>
+                    <img src="https://constant.myntassets.com/checkout/assets/img/ship-free.webp">
+                    <p>Yay! No convenience fee on this order</p>
+                </div>
+                <div>
+                    <input type="checkbox">
+                    <span>1/1 ITEMS SELECTED</span>
+                    <p>Remove</p>
+                    <p>Watchlist</p>
+                </div>
+                <div>
+                    <div>
+                        <img src="https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/12288656/2020/10/28/80f4443e-dc4e-47ef-999e-b6a613b1e9921603861869160-Roadster-Men-Jackets-3811603861867068-1.jpg">
+                    </div>
+                    <div>
+                        <h4>Roadster</h4>
+                        <p>Men Blue Washed Denim Jacket</p>
+                        <p>Sold by:Truenet Commerce</p>
+                        <select>
+                            <option>Size:M</option>
+                        </select>
+                        <select>
+                            <option>Qty:1</option>
+                        </select>
+                        <p>1609 30% OFF</p>
+                        <i class="fa-solid fa-arrow-rotate-left"></i>
+                        <span>14 days return avaliable</span>
+
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <i class="fa-regular fa-bookmark"></i>
+                    </div>
+                    <div>
+                        <p>Add More From Wish</p>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-greater-than"></i>
+                    </div>
+
+                </div>
+            </div>
+            <div id="order">
+                <div id="kk">
+                <div id="offer">
+                    <div>
+                        <p>OFFERS & COUPONS</p>
+                    </div>
+                </div>
+                    
+                    <div id="image">
+                        <div>
+                            <img src="https://constant.myntassets.com/checkout/assets/img/additional-offer.webp">
+                     
+                        </div>
+                        <div>
+                            <p>1 offer on your Bags</p>
+                        </div> 
+                    </div>
+                    <div id="kb">
+                        <div>
+                            <p>Apply Coupons</p>
+                        </div>
+                        <span>Apply</span>
+                    </div>
+                    </div>
+
+                <div id=" total">
+                <div id="gift">
+                    <h5>GIFTING & PERSONALIZATION</h5>
+                </div>
+                    <div id="buy">
+                        <div>
+                        <img src="https://constant.myntassets.com/checkout/assets/img/gift-big.webp">
+                        </div>
+                        <div>
+                            <h5>Buying For Loved One</h5>
+                            <p>gift wrap and personalised message on card</p>
+                            <p>Only for Rs 25</p>
+                            <h6>ADD GIFT WRAP</h6>
+                        </div>
+                    </div>
+                </div>
+                <div id="price">
+                    <h5>Price Detail (1)Item </h5>
+                    <div id =total>
+                    <div id="left">
+                        <div>
+                            <p>Total Mrp</p>
+                        </div>
+                        <div>
+                            <p>Discount on MRP</p>
+                        </div>
+                        <div>
+                            <p>Coupon Discount</p>
+                        </div>
+                        <div>
+                            <p>Convenience Fee</p>
+                        </div>
+                       
+                    </div>
+                    <div id="Right">
+                        <div>
+                            <p>2299</p>
+                        </div>
+                        <div>
+                            <p>-1150</p>
+                        </div>
+                        <div>
+                            <p>Apply Coupon</p>
+                        </div>
+                        <div>
+                            <p>Free</p>
+                        </div>
+                </div>
+
+            </div>
+                </div>
+                <div>
+                    <div>
+                        <p>Total Amount</p>
+                        <p>1149</p>
+                    </div>
+                   
+                    <div>
+                        <button>Place the order</button>
+                    </div>
+                    
+                    
+
+                </div>
+            </div>
+        </div> 
+    </div>
+    
+</body>
+</html>
+
+<i class="fa-regular fa-bookmark"></i>
+<span>Add More From Wish</span>
+<i class="fa-solid fa-greater-than"></i>

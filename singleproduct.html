@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single</title>
+    <script src="https://kit.fontawesome.com/032f5a99f2.js" crossorigin="anonymous"></script>
+        <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Assistant,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+            font-size: 10px;
+        }
+    #main
+    {
+        width: 100%;
+        height: 1900px;
+        /* border:1px solid black; */
+    }
+     #navbar    
+      {
+        width: 100%;
+        height: 60px;
+        border: 1px solid white;
+        display: flex ;
+        background-color: #fff;
+        margin-bottom: 20px;
+        
+  
+      }
+      #navbar>div:nth-child(1)
+      {
+        width: 10%;
+        height: 100%;
+        /* border: 1px solid black; */
+      }
+       #navbar>div:nth-child(1)>img
+       {
+        width: 53px;
+        height: 36px;
+        margin-left: 15px;
+        margin-top: 13px;
+        background-color: white;
+        margin-bottom: 30px                 ;
+       }
+       #navbar>div:nth-child(2)
+      {
+        width: 50%;
+        height: 100%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: space-around;
+        margin-top: 19px;
+
+      }
+      #navbar>div:nth-child(2)>p
+      {
+        font-size: 10px;
+       font-family: Assistant,apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+
+      }
+      #navbar>div:nth-child(3)
+      {
+        width: 30%;
+        height: 50%;
+        border: 1px solid gray;
+        margin-top: 12px;
+        
+      }
+      #navbar>div:nth-child(3)>input
+      {
+        width: 200px;
+        font-size: 14px;
+        border: 1px solid #f5f5f6;  
+        border: none;
+        outline: none;
+        margin-top: 5px;
+
+      }
+      #navbar>div:nth-child(3)>button
+      {
+        border:none;
+        padding: 4px 4px;
+        /* margin-left: 10px; */
+        border: none;
+        background-color: white;
+      }
+      #navbar>div:nth-child(4)
+       {
+        width: 20%;
+        height: 100%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: space-around;
+        
+      }
+      #navbar>div:nth-child(4)>div
+      {
+        width: 20%;
+        height :100%;
+        margin-top: 12px;
+      }
+      #navbar>div:nth-child(4)>div>p
+      {
+        font-size: 10px;
+        font-family: Assistant,apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      }
+      .title
+      {
+        width: 100%;
+        /* border: 1px solid black; */
+        margin-bottom: 20px;
+      }
+      .title>div>ul
+      {
+        display: flex;
+        list-style: none;
+        margin-left: 10px;
+      }
+      .title>div>ul>li
+      {
+        font-size: 10px;
+      }
+      .products
+      {
+        width: 100%;
+        /* height: 500px; */
+        border: 1px solid black;
+        display: flex;
+      }
+      .products>div
+      {
+        width: 50%;
+        height: 100%;
+        /* border: 1px solid black; */
+      }
+      .left
+      {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    .left>div
+    {
+        width: 50%;
+        justify-content: space-between;  
+    }
+    .left>div>img
+    {
+        width: 100%;
+        height: 250px;
+    }
+    .right
+    {
+        width: 50%;
+        margin-top: 20px;
+    }
+    .input h1
+    {
+        font-size: 15px;
+        margin-left: 25px;
+    }
+    .title-one h1
+    {
+        font-size: 13px;
+        margin-left: 25px;
+        color: grey;
+        margin-bottom: 15px;
+    }
+    .rating
+    {
+        display: flex;
+        margin-left: 25px;
+        border: 1px solid black;
+        width: 20%;
+        margin-bottom: 15px;
+    }
+    .price{
+        margin-left: 25px;
+        display: flex;
+    } 
+    .price>h2
+    {
+    font-size: 20px;
+    }
+    .price p
+    {
+      margin-left: 10px;
+      font-size: 20px;
+    }
+    .price span
+    {
+      margin-left: 10px;
+     font-size: 20px; 
+     color: orangered;
+    }
+    .inclusive
+    {
+      margin-left: 30px;
+      margin-top: 5px;
+    }
+    .inclusive p
+    {
+      color: #14943b;
+      font-size: 12px;
+    }
+    .size
+    {
+      margin-top: 10px;
+      /* border: 1px solid black; */
+      display: flex;
+      margin-left: 30px;
+    }
+    .size h3
+    {
+      font-size: 15px;
+    }
+    .size h5
+    {
+      margin-left: 20px;
+      font-size: 12px;
+      margin-top:3px;
+      color: palevioletred; 
+    }
+    .size svg
+    {
+      margin-top: 4px;
+    }
+    .bag
+    {
+      height: 50px;
+      border: 1px solid black;
+    }
+    .add-bag
+    {
+      width: 30%;
+      border: 1px solid #ff3e6c;;
+      height: 30px;
+      margin-left: 30px;
+      margin-top: 10px;
+      background-color: #ff3e6c;
+    }
+    .add-bag i
+    {
+      width: 10%;
+      height:40px;
+      margin-left: 20px;
+      color: white;
+    }
+    .add-bag input
+    {
+      width: 60%;
+      font-size: 15px;
+      margin-top: 5px;
+      cursor: pointer;
+      background-color: white;
+      border: none;
+      background-color: #ff3e6c;
+      color: white;
+    }
+</style>
+</head>
+<body>
+    <div id="main">
+        <div id=navbar>
+            <div>
+              <img src="images_1_-removebg-preview.png">
+            </div>
+            <div>
+              <p>MEN</p>
+              <p>WOMEN</p>
+              <p>KIDS</p>
+              <p>HOME&LIVING</p>
+              <p>BEAUTY</p>
+              <p>STUDIO</p>
+            </div>
+            <div>
+              <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+               <input type="search" placeholder="Search for Product">
+            </div>
+            <div>
+              <div>
+                <i class="fa-regular fa-user"></i>
+                <p>Profile</p>
+              </div>
+              <div>
+                <i class="fa-regular fa-heart"></i>
+                <p>wishlist</p>
+              </div>
+              <div>
+                <i class="fa-solid fa-bag-shopping"></i>
+                <p>Bags</p>
+              </div>
+            </div>
+          </div>
+          <div class="title">
+            <div>
+                <ul>
+                    <li>Home</li>
+                    <li>/</li>
+                    <li>Clothing</li>
+                    <li>/</li>
+                    <li>Men Clothing</li>
+                    <li>/</li>
+                    <li>Tshirts</li>
+                    <li>/</li>
+                    <li><b>Minions By Kook N Keech Tshirts</b></li>
+                    <li>></li>
+                    <li><b>More By Minions By Kook N Keech</b></li>
+                </ul>
+            </div>
+          </div>
+          <div class="products">
+            <div class="left">
+                <div>
+                <img src="https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/8923841/2019/6/3/736b9f2c-3a49-41a9-828c-1e0218b62e431559550212164-Minions-by-Kook-N-Keech-Men-Purple-Printed-Round-Neck-T-shir-1.jpg">
+                </div>
+                <div>
+                <img src="https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/8923841/2019/6/3/a21db48e-5fa4-4bd6-8a52-203745f247611559550212145-Minions-by-Kook-N-Keech-Men-Purple-Printed-Round-Neck-T-shir-2.jpg">
+                </div>
+                <div>
+                    <img src="https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/8923841/2019/6/3/7d2bb3b5-b6a9-4cac-ab1f-814071ac32f11559550212123-Minions-by-Kook-N-Keech-Men-Purple-Printed-Round-Neck-T-shir-3.jpg">
+                </div>
+                <div>
+                    <img src="https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/8923841/2019/6/3/c8e2c851-ad44-4623-9df0-b03995554c431559550212101-Minions-by-Kook-N-Keech-Men-Purple-Printed-Round-Neck-T-shir-4.jpg">
+                </div>
+                <div>
+                    <img src="https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/8923841/2019/6/3/361af51e-4174-419c-aebc-3bb80120d8f31559550212090-Minions-by-Kook-N-Keech-Men-Purple-Printed-Round-Neck-T-shir-5.jpg">
+                </div>
+            </div>
+            <div class=right>
+                    <div class="input">
+                        <h1>Minions by Kook N Keech</h1>
+                    </div>
+                    <div class="title-one">
+                        <h1>Men Purple Boxy Fit Printed Round Neck Pure Cotton<br>Oversized T-shirt</h1>
+                    </div>
+                    <div class="rating">
+                        <p>4.3<i class="fa-solid fa-star" style="color: #14943b;"></i></p>
+                        <p>|</p>
+                        <p>3.7k Ratings</p>
+                    </div>
+                  <hr style="width: 90%; margin: auto;">
+                    <div class="price">
+                        <h2>₹626</h2>
+                        <p>MRP ₹1099</p>
+                        <span>(43% OFF)</span>
+                    </div>
+                    <div class="inclusive">
+                      <p>inclusive of all taxes</p>
+                    </div>
+                    <div class="size">
+                      <h3>SELECT SIZE</h3>
+                      <h5>SIZE CHART</h5>
+                        <svg width="15" height="15" fill="none" stroke="#f934c4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path d="m9 18 6-6-6-6"></path>
+                        </svg>
+                    </div>
+                    <div class="bag">
+                     <div class="add-bag">
+                      <i class="fa-solid fa-bag-shopping fa-xl"></i>
+                      <button onclick="addcart()">Add to Bag</button>
+                     </div>
+                     <div class="wish">
+                     </div>
+                    </div>
+                </div>
+            </div>
+            <div id="singlepage"></div>
+          </div> 
+
+           <script>
+        window.onload=function()
+        {
+            var product=JSON.parse(localStorage.getItem("myntraCurrent-Product"));
+            var divToAppendProduct=document.getElementById("singlepage")
+
+            var structure= `<div id="singlePro">
+                <img src=${productsFromLs[i].proImage}>
+                    <h3>${productsFromLs[i].proName}</h3>
+                    <p>${productsFromLs[i].proPrice}</p>
+                    <button onclick='addcart()'>Add to cart </button>
+                    </div>`
+                    console.log(structure,"here");
+                    divToAppendProduct.innerHTML=structure;
+        }
+        function addcart()
+        {
+            alert("adding to cart");
+        }
+
+    </script>
+</body>
+</html>
