@@ -18,19 +18,36 @@
         <input type="submit" ><br>  
     </form>
     <script>
+        // function addproduct(event)
+        // {
+        //     event.preventDefault();
+        //      //alert("product adding")
+        //      var proName=document.getElementById("pname").value;
+        //      var proPrice=document.getElementById("pprice").value;
+        //      var proImage=document.getElementById("pimage").value;
+        //      var product={proName,proPrice,proImage} ;
+
+        //      var Ls=JSON.parse(localStorage.getItem("myntraProductList")) || [];
+        //      Ls.push(product);
+        //      localStorage.setItem("myntraProductList",JSON.stringify(Ls));
+        //      alert("Product Successfully")
+        // }
+            
+
         function addproduct(event)
         {
             event.preventDefault();
-             //alert("product adding")
-             var proName=document.getElementById("pname").value;
-             var proPrice=document.getElementById("pprice").value;
-             var proImage=document.getElementById("pimage").value;
-             var product={proName,proPrice,proImage} ;
 
-             var Ls=JSON.parse(localStorage.getItem("myntraProductList")) || [];
-             Ls.push(product);
-             localStorage.setItem("myntraProductList",JSON.stringify(Ls));
-             alert("Product Successfully")
+            var proName = document.getElementById("pname").value;
+            var proPrice = document.getElementById("pprice").value;
+            var proImage = document.getElementById("pimage").value;
+            var product ={proName,proPrice,proImage};
+
+            var Ls = JSON.parse(localStorage.getItem("ProductList"))||[];
+            Ls.push(product);
+
+            localStorage.setItem("ProductList",JSON.stringify(Ls));
+            alert("Product added Successfully")
         }
     </script>
 

@@ -807,7 +807,7 @@
                             <p>Return within 30 days</p>
                         </div>
                     </div>   
-            </div>
+            </div> 
             </div>
    <script>
                     window.onload = function()
@@ -862,6 +862,42 @@
                         localStorage.removeItem("myntraCurrentUser");
                         window.location.reload();
                     }
+
+
+                    window onload = function()
+                    {
+                        var currentuser =JSON.parse(localStorage.getItem("myntraCurrentuser"));
+                        console.log("currentuser")
+                    }
+
+                    if(!! currentuser)
+
+                    {
+                        logoutDiv = document.getElementById("logout").value;
+                        divfromhtml = document.getElementById("Switch").value;
+
+                        var button = `<button onclick = "logout()">Logout></button>`
+                        var name = `<h1>${currentuser.userEmail}</h1>`;
+                   
+                        logoutDiv.innerHTML = button;
+                        divfromhtml.innerHTML= name;
+
+                    }else{
+                        alert("Currentuser not found")
+                    }
+
+                    var divfromproduct = JSON.parse(localStorage.getItem("tshirts"))
+                    var finalData ="";
+
+
+                    var productfromLs = JSON.parse(localStorage.getItem("Productlist"))
+                    for(i=0;i<productfromLs.length;i++)
+                    {
+                        finalData =`<div onclick = redirect(${JSON.stringify(productfromLs[i])})id="singlepro";
+                        <img src=${}
+                    }
+
+
                 </script>
 </body>
 </html>

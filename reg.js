@@ -7,6 +7,7 @@ var email=document.getElementById("email").value;
 var password=document.getElementById("password").value;
 var confirmpassword=document.getElementById("confirmpassword").value;
 
+
 if(name && email && password && confirmpassword)
 
 {
